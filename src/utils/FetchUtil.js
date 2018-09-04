@@ -1,5 +1,3 @@
-
-
 import ToastUtil from "./ToastUtil";
 
 export const common_url = 'http://sjpay.githubshop.com/app/';  //服务器地址

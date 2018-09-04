@@ -24,11 +24,10 @@ export default class Root extends Component {
         SplashScreen.hide(); // 隐藏启动屏
         // 新版本必需写回调函数
         // JPushModule.notifyJSDidLoad();
-        JPushModule.notifyJSDidLoad((resultCode) => {
-            if (resultCode === 0) {
-            }
-        });
-
+        // JPushModule.notifyJSDidLoad((resultCode) => {
+        //     if (resultCode === 0) {
+        //     }
+        // });
         // 接收自定义消息
         JPushModule.addReceiveCustomMsgListener((message) => {
             this.setState({pushMsg: message});
