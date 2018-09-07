@@ -46,13 +46,8 @@ export default class PeoplePage extends Component {
         }
     }
 
-
-    componentDidMount() {
-
-    }
-
     getContacts() {
-        var url = "http://192.168.10.142:3000/json/friends.json"; // 新接口
+        var url = "http://app.yubo725.top/friends";
         fetch(url).then((res) => res.json())
             .then((json) => {
                 // UserInfoUtil.setUserInfo(json);
@@ -81,6 +76,7 @@ export default class PeoplePage extends Component {
     renderLoadingView() {
         return (
             <View style={styles.container}>
+                <View style={styles.sBar} backgroundColor={Global.titleBackgroundColor}/>
                 <TitleBar nav={this.props.navigation}/>
                 <View style={styles.content}>
                     <CommonLoadingView hintText={"正在获取联系人数据..."}/>
