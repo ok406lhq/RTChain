@@ -38,6 +38,6 @@ public class MainActivity extends ReactActivity {
 
             @Override
             protected void onDestroy() {
-                //super.onDestroy();
+                super.onDestroy();
             }
 }

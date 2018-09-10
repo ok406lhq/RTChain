@@ -100,7 +100,18 @@ export default class PeoplePage extends Component {
 
     renderSuccessView() {
         var listData = [];
+        var headerListData = [];
+        var headerImages = [require('../../img/ic_new_friends.png')];
+        var headerTitles = ['新的朋友'];
         var index = 0;
+        for (var i = 0; i < headerTitles.length; i++) {
+            headerListData.push({
+                key: index++,
+                title: headerTitles[i],
+                icon: headerImages[i],
+                sectionStart: false,
+            });
+        }
         var contacts = this.state.contactData;
         for (var i = 0; i < contacts.length; i++) {
             // var pinyin = PinyinUtil.getFullChars(contacts[i].name);
@@ -136,6 +147,9 @@ export default class PeoplePage extends Component {
             }
             return 0;
         });
+
+        listData = headerListData.concat(listData);
+
         // 根据首字母分区
         for (var i = 0; i < listData.length; i++) {
             var obj = listData[i];
